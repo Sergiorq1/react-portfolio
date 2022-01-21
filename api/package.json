@@ -1,6 +1,15 @@
 {
+  "scripts": {
+    "start": "node server.bundle.js",
+    "build": "webpack",
+    "dev": "nodemon ./server.js localhost 3080"
+  },
   "dependencies": {
     "express": "^4.17.2",
-    "nodemon": "^2.0.15"
+    "http-proxy-middleware": "^2.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "webpack": "^5.66.0"
   }
 }
