@@ -5,7 +5,7 @@ const app = express(),
 
 // place holder for the data
 const users = [];
-
+//bodyParser: handles data in the http request object
 app.use(bodyParser.json());
 
 app.get('/api/users', (req, res) => {
@@ -15,7 +15,7 @@ app.get('/api/users', (req, res) => {
 
 app.post('/api/user', (req, res) => {
   const user = req.body.user;
-  console.log('Adding user::::::::', user);
+  console.log('Adding user:', user);
   users.push(user);
   res.json("user added");
 });
