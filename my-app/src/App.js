@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/' exact/>
         </Routes>
+
       </Router>
       <h1>Hi b </h1>
       
