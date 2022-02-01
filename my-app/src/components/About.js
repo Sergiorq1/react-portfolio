@@ -8,7 +8,7 @@ function About() {
             Hi, I'm Sergio. <br/>
             A Developer.
         </h1>
-        <p>In a nutshell, I'm a creative person who loves learning and working with technologies regarding websites, blockchain, and music 
+        <p>In a nutshell, I'm a creative person who loves learning and working with technologies regarding API's, blockchain, and music 
         <a href="url">Learn more</a>
         </p>
     </div>
