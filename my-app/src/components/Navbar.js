@@ -27,7 +27,7 @@ function Navbar() {
     <nav className='navbar'>
         <div className="navbar-container">
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                Sergio Rodriguez <i class="fas fa-compact-disc"></i>
+                <i class="fas fa-record-vinyl"></i>
             </Link>
             <div className='menu-icon' onClick={handleClick}>
                 <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
@@ -45,32 +45,18 @@ function Navbar() {
                 </li>
                 <li className='nav-item'> 
                     <Link to='/links' className='nav-links' onClick={closeMobileMenu}>
-                        Prof. Links
+                        Links
                     </Link>
                 </li>
                 <li className='nav-item'> 
                     <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
                         Contact Info
                     </Link>
-                </li>
-                <li className='nav-item'> 
-                    <Link to='/fun' className='nav-links' onClick={closeMobileMenu}>
-                        Fun Facts API
-                    </Link>
-                </li>
-                <li className='nav-item'> 
-                    <Link to='/sign-up' className='nav-links' onClick={closeMobileMenu}>
-                        Sign Up
-                    </Link>
-                </li>                
+                </li>  
             </ul>
             {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>
-
-
-
     </nav>
-
   </>
   )
 }
