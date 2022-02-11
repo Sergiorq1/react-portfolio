@@ -6,7 +6,8 @@ import {
   Route} from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
-
+import Background from './components/pages/Background';
+import Footer from './components/Footer';
 function App() {
   return (
     <>
@@ -14,7 +15,9 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/background' element={<Background/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
       
       
