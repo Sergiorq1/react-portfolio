@@ -1,8 +1,10 @@
 import React from 'react';
-
+import Me from '../Me';
 function Background() {
   return (
-    <h1>Heyy</h1>
+    <>
+      <Me/>
+    </>
   )
 }
 
