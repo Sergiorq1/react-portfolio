@@ -3,8 +3,8 @@ import CardItem from './CardItem';
 import './Cards.css';
 function Cards() {
   return (
-    <div className='cards'>
-        <div className="cards-box">
+    <div className='cards' id='projects'>
+        <div className="cards-box" id='projects'>
             <h1>Projects</h1>
             <div className="cards-container">
                 <div className="cards-wrapper">

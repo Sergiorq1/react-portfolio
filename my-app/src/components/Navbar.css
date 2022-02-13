@@ -113,6 +113,7 @@
       display:table;
       padding: 0%;
       margin: 0%;
+      /* display: none; */
     }
   
     .nav-links:hover {

@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Button } from './Button';
+import { HashLink as Link } from 'react-router-hash-link';
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -24,9 +25,9 @@ function Navbar() {
   window.addEventListener('resize', showButton);
   return (
   <>
-    <nav className='navbar'>
+    <nav className='navbar' id='/#'>
         <div className="navbar-container">
-            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+            <Link to='/#' className='navbar-logo' onClick={closeMobileMenu}>
                 <i class="fas fa-record-vinyl"></i>
             </Link>
             <div className='menu-icon' onClick={handleClick}>
