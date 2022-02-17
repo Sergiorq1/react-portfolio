@@ -17,6 +17,15 @@ h1 {
     flex-flow: column;
     align-items: center;
 }
+.input-group {
+    padding: 1rem;
+}
+.form-control-name {
+    padding-right: 1rem;
+}
+.btn-primary {
+    margin-bottom: 1rem;
+}
 @media only screen and (max-width: 1024px) {
     .contact {
         padding: 0rem;

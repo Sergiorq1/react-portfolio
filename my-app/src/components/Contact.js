@@ -25,46 +25,56 @@ const handleSubmit = (event) => {
             <h1>Contact Me</h1>
             <div className="contact-container">
                 <form className="form">
-                    <div className="name">
-                        <label for="name">Name</label>
+                    <div className="input-group mb-3">
+                        <span for="inputName" class='input-group-text' id="inputGroup-sizing-default">Name</span>
                         <input
                             type="text"
                             name="name"
-                            className="name"
+                            class="form-control"
+                            id='inputName'
+                            aria-describedby='nameHelp'
                             tabIndex="1"
                             placeholder='John Cena'
                             ref = {nameRef}
                         />
-                        <label for="subject">Subject</label>
+                        <span for="inputSubject" class='input-group-text' id="inputGroup-sizing-default" >Subject</span>
                         <input
                             type="text"
                             name="subject"
-                            className="subject"
+                            class="form-control"
+                            id='inputSubject'
+                            aria-describeedby='emailSubjectHelp'
                             tabIndex="2"
                             // placeholder='Subject'
                             ref = {subjectRef}
                         />
                     </div>
-
-                    <label for="email">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        className="email"
-                        placeholder="example@corp.com"
-                        tabIndex="3"
-                        ref = {emailRef}
-                    />
-
-                    <label for="message">Message</label>
-                    <textarea
-                        placeholder="Start typing..."
-                        className="message"
-                        name="message"
-                        ref = {messageRef}
-                    />
-                    <button type="submit" className="send">Send</button>
+                    <div className="mb-3">
+                        <label for="inputEmail" class='form-label'>Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control" 
+                            id="inputEmail" 
+                            aria-describedby="emailHelp"
+                            placeholder="example@corp.com"
+                            tabIndex="3"
+                            ref = {emailRef}
+                        />
+                        <div id="emailHelp" class="form-text">I'll never share your email with anyone else ;)
+                        </div>
+                    </div>
+                    <div className="input-group">
+                        <span for="inputMessage" class='input-group-text'>Message</span>
+                        <textarea 
+                            placeholder="Start typing..."
+                            class="form-control"
+                            aria-label='message'
+                            name="message"
+                            ref = {messageRef}
+                        />
+                    </div>
+                    <button type="button" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
