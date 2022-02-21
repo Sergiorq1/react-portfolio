@@ -21,26 +21,25 @@ const messageRef =  useRef(null)
 // }
     const [status, setStatus] = useState("Submit");
     const handleSubmit = async (e) => {
-    alert('submittinggg')
-    e.preventDefault();
-    setStatus("Sending...");
-    const { name, subject, email, message } = e.target.elements;
-    let details = {
-        name: name.value,
-        subject: subject.value,
-        email: email.value,
-        message: message.value,
-    };
-    let response = await fetch("http://localhost:3000", {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    alert(result.status);
+        e.preventDefault();
+        setStatus("Sending...");
+        const { name, subject, email, message } = e.target.elements;
+        let details = {
+            name: name.value,
+            subject: subject.value,
+            email: email.value,
+            message: message.value,
+        };
+        let response = await fetch("http://localhost:3080/contact", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify(details),
+        });
+        setStatus("Submit");
+        let result = await response.json();
+        alert(result.status);
     };
 
 
@@ -51,7 +50,7 @@ const messageRef =  useRef(null)
         <div className="contact-box">
             <h1>Contact Me</h1>
             <div className="contact-container">
-                <form className="form" onSubmit={handleSubmit}>
+                <form className="form">
                     <div className="input-group mb-3">
                         <span for="inputName" class='input-group-text' id="inputGroup-sizing-default">Name</span>
                         <input
@@ -105,7 +104,7 @@ const messageRef =  useRef(null)
                             required
                         />
                     </div>
-                    <button type="button" class="btn btn-primary">{status}</button>
+                    <button type="button" class="btn btn-primary" onClick={handleSubmit}>{status}</button>
                 </form>
             </div>
         </div>
