@@ -1,16 +1,21 @@
 // server/index.js
 const path = require('path');
 const express = require("express");
-const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 require('dotenv').config();
 const PORT = process.env.PORT || 3080;
 const app = express();
 
+//middleware
+app.use(cors());
+app.use(express.json())
+
 // Email logic
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
+  port: 3080,
+  secure: true,
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASSWORD,
@@ -20,22 +25,22 @@ const contactEmail = nodemailer.createTransport({
   },
 });
 
-/*
-let mailOptions = {
-  from: "test@gmail.com",
-  to: process.env.GMAIL_USER,
-  subject: "Nodemailer API",
-  text: "Hi from your nodemailer API",
- };
 
-contactEmail.sendMail(mailOptions, function (err, data) {
-  if (err) {
-    console.log("Error " + err);
-  } else {
-    console.log("Email sent successfully");
-  }
-});
-*/
+// let mailOptions = {
+//   from: "test@gmail.com",
+//   to: process.env.GMAIL_USER,
+//   subject: "Nodemailer API",
+//   text: "Hi from your nodemailer API",
+//  };
+
+// contactEmail.sendMail(mailOptions, function (err, data) {
+//   if (err) {
+//     console.log("Error " + err);
+//   } else {
+//     console.log("Email sent successfully");
+//   }
+// });
+
 
 contactEmail.verify((error) => {
   if (error) {
@@ -45,25 +50,27 @@ contactEmail.verify((error) => {
   }
 });
 
-app.use(cors());
 
-router.post("/contact", (req, res) => {
-  const name = req.body.name;
-  const subject = req.body.subject;
-  const email = req.body.email;
-  const message = req.body.message; 
-  const mail = {
+
+app.post("/contact", (req, res) => {
+  const name = req.body.mailerState.name;
+  const subject = req.body.mailerState.subject;
+  const email = req.body.mailerState.email;
+  const message = req.body.mailerState.message; 
+  let mail = {
     from: name,
     to: process.env.GMAIL_USER,
-    subject: `<p>Subject: ${subject}</p>`,
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Message: ${message}</p>`,
+    subject:subject,
+    html: `Name: ${name}
+           Email: ${email}
+           Message: ${message}`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
       res.json({ status: "ERROR" });
+      console.log('Failed to send :(')
     } else {
+      console.log('sent successfully')
       res.json({ status: "Message Sent" });
     }
   });

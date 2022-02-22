@@ -1,45 +1,59 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 
 
 
-function Contact() {
-const nameRef = useRef(null)
-const subjectRef =  useRef(null)
-const emailRef = useRef(null)
-const messageRef =  useRef(null)
-// const handleSubmit = (event) => {
-//     event.preventDefault()
-
-//     const data = {
-//           name: nameRef.current.value,
-//           subject: subjectRef.current.value,
-//           email: emailRef.current.value,
-//           message: messageRef.current.value
-//           }
-//     alert("tadaaa!: \n" + JSON.stringify(data) + "Your data 😎")
-// }
+function Contact(props) {
+    const [mailerState, setMailerState] = useState({
+        name: "",
+        subject: "",
+        email: "",
+        message: "",
+    });
+    function handleStateChange(e) {
+        setMailerState((prevState) => ({
+          ...prevState,
+          [e.target.name]: e.target.value,
+        }));
+    }
+    // changing button
     const [status, setStatus] = useState("Submit");
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log({ mailerState });
+        // changing button
         setStatus("Sending...");
-        const { name, subject, email, message } = e.target.elements;
-        let details = {
-            name: name.value,
-            subject: subject.value,
-            email: email.value,
-            message: message.value,
-        };
-        let response = await fetch("http://localhost:3080/contact", {
+        
+        await fetch("http://localhost:3080/contact", {
             method: "POST",
             headers: {
-            "Content-Type": "application/json;charset=utf-8",
+            "Content-Type": "application/json",
             },
-            body: JSON.stringify(details),
-        });
+            body: JSON.stringify({mailerState}),
+        })
+            .then((res) => res.json())
+            .then(async (res) => {
+                const resData = await res;
+                console.log(resData);
+                if (resData.status === "success") {
+                alert("Message Sent");
+                } else if (resData.status === "fail") {
+                alert("Message failed to send");
+                }
+            })
+        
+            .then(() => {
+              setMailerState({
+                name: "",
+                subject: "",
+                email: "",
+                message: "",
+              });
+            });
         setStatus("Submit");
-        let result = await response.json();
-        alert(result.status);
+        // let result = await response.json();
+        // alert(result.status);
     };
 
 
@@ -50,30 +64,26 @@ const messageRef =  useRef(null)
         <div className="contact-box">
             <h1>Contact Me</h1>
             <div className="contact-container">
-                <form className="form">
+                <form className="form"onSubmit={handleSubmit}>
                     <div className="input-group mb-3">
                         <span for="inputName" class='input-group-text' id="inputGroup-sizing-default">Name</span>
                         <input
                             type="text"
+                            onChange={handleStateChange}
                             name="name"
                             class="form-control"
-                            id='name'
                             aria-describedby='nameHelp'
-                            tabIndex="1"
                             placeholder='John Cena'
-                            ref = {nameRef}
-                            required 
+                            value={mailerState.name}
                         />
                         <span for="inputSubject" class='input-group-text' id="inputGroup-sizing-default" >Subject</span>
                         <input
                             type="text"
                             name="subject"
                             class="form-control"
-                            id='subject'
-                            aria-describeedby='emailSubjectHelp'
-                            tabIndex="2"
-                            ref = {subjectRef}
-                            required
+                            aria-describedby='emailSubjectHelp'
+                            onChange={handleStateChange}
+                            value={mailerState.subject}
                         />
                     </div>
                     <div className="mb-3">
@@ -82,12 +92,10 @@ const messageRef =  useRef(null)
                             type="email"
                             name="email"
                             class="form-control" 
-                            id="email" 
                             aria-describedby="emailHelp"
                             placeholder="example@corp.com"
-                            tabIndex="3"
-                            ref = {emailRef}
-                            required
+                            onChange={handleStateChange}
+                            value={mailerState.email}
                         />
                         <div id="emailHelp" class="form-text">I'll never share your email with anyone else ;)
                         </div>
@@ -99,12 +107,11 @@ const messageRef =  useRef(null)
                             class="form-control"
                             aria-label='message'
                             name="message"
-                            id="message"
-                            ref = {messageRef}
-                            required
+                            onChange={handleStateChange}
+                            value={mailerState.message}
                         />
                     </div>
-                    <button type="button" class="btn btn-primary" onClick={handleSubmit}>{status}</button>
+                    <button type="submit" class="btn btn-primary">{status}</button>
                 </form>
             </div>
         </div>
