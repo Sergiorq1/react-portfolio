@@ -12,34 +12,35 @@ function Cards() {
                         <CardItem
                         src='https://api.lorem.space/image?'
                         text='NFT Puzzle Game'
-                        label="Blockchain"
-                        path='/services'
+                        label="Blockchain, React"
+                        to='/services'
                         />
                         <CardItem
                         src='https://api.lorem.space/image/car?'
                         text='Fun facts'
                         label="API"
-                        path='/services'
+                        to='/services'
                         />
                     </ul>
                     <ul className="cards-items">
                         <CardItem
-                        src='https://api.lorem.space/image/fashion?'
+                        
+                        src='https://api.lorem.space/image/watch?'
                         text='Spotify playlist'
                         label="music"
-                        path='/services'
+                        to='/services'
                         />
                         <CardItem
                         src='https://api.lorem.space/image/shoes?'
                         text='Basketball Visualization'
                         label="music"
-                        path='/services'
+                        to='/services'
                         />
                         <CardItem
-                        src='https://api.lorem.space/image/watch?'
-                        text='Spotify playlist'
-                        label="music"
-                        path='/services'
+                        src='space-galaxy-background.jpg'
+                        text='Pygame Space Invaders'
+                        label="Python"
+                        to='//replit.com/@SergioRodrigu13/Spaceship-of-DOOOOM?v=1'
                         /> 
                     </ul>
                 </div>

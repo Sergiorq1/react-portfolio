@@ -36,8 +36,8 @@ function Footer() {
             >
                 <i class="fab fa-medium"></i>
             </Link>
-
         </div>
+        <p>This is a react project</p>
     </div>
 
   );
