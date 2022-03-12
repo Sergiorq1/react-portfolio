@@ -19,6 +19,7 @@ function App() {
 
   return (
     <>
+      <p>{!data ? "Loading..." : data}</p>
       <BrowserRouter>
         <Navbar/>
         <Routes>
