@@ -6,19 +6,14 @@ const nodemailer = require("nodemailer");
 require('dotenv').config();
 const PORT = process.env.PORT || 3080;
 const app = express();
-const routes = require('./routes/mail');
-
+const emailController = require('./controllers/emailController');
+const Email = require('./routes/mail');
 //middleware
 app.use(cors());
-app.use(express.json())
-
+app.use(express.json());
 
 // Email logic
-app.use('/contact', routes)
-
-
-
-
+Email.Emails();
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '/Users/sergiorodriguez-quiroz/dev/Make_School/Classes/React/my-app/build')));
@@ -33,6 +28,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '/Users/sergiorodriguez-quiroz/dev/Make_School/Classes/React/my-app/build', 'index.html'));
 });
 
+//Returns Port in terminal
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });

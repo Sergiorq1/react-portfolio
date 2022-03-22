@@ -1,3 +1,4 @@
+const nodemailer = require("nodemailer");
 
 // makes connection to nodemailer from personal email
 const connectEmail = nodemailer.createTransport({
@@ -12,7 +13,7 @@ const connectEmail = nodemailer.createTransport({
       refreshToken: process.env.OAUTH_REFRESH_TOKEN
     },
 });
-  
+
 //verifies if connection to my email is there
 const verifyConnection = connectEmail.verify((error) => {
     if (error) {
