@@ -22,9 +22,8 @@ const verifyConnection = connectEmail.verify((error) => {
       console.log("Ready to Send");
     }
 });
-  
 
-const sendInfo = (req, res) => {
+function sendInfo (req, res) {
     const name = req.body.mailerState.name;
     const subject = req.body.mailerState.subject;
     const email = req.body.mailerState.email;
@@ -46,7 +45,6 @@ const sendInfo = (req, res) => {
             res.json({ status: "Message Sent"})
         }
     })
-
 }
 
 module.exports = {
