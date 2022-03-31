@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
-    "build": "cd /Users/sergiorodriguez-quiroz/dev/Make_School/Classes/React/my-app && npm install && npm run build",
+    "build": "../my-app && npm install && npm run build",
     "dev": "nodemon ./server.js localhost 3080"
   },
   "dependencies": {
@@ -9,7 +9,8 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "http-proxy-middleware": "^2.0.1",
-    "nodemailer": "^6.7.2"
+    "nodemailer": "^6.7.2",
+    "node":"16.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",
