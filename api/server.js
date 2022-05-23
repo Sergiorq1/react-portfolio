@@ -36,8 +36,7 @@ connectEmail.verify((error) => {
   }
 });
 
-app.get('/contact', (req, res) =>{
-  res.json({ message: "Hello from Email!" });
+app.post('/contact', (req, res) =>{
   const name = req.body.mailerState.name;
   const subject = req.body.mailerState.subject;
   const email = req.body.mailerState.email;
