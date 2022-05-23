@@ -25,7 +25,7 @@ function Contact(props) {
         // changing button
         setStatus("Sending...");
         
-        await fetch("http://localhost:3080/contact", {
+        await fetch("https://react-portfolio-serge.herokuapp.com/Contact", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

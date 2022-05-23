@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
-    "build": "../my-app && npm install && npm run build",
+    "build": "npm install",
     "dev": "nodemon ./server.js localhost 3080"
   },
   "dependencies": {
