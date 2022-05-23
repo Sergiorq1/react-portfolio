@@ -36,7 +36,8 @@ connectEmail.verify((error) => {
   }
 });
 
-app.post('/Contact', (req, res) =>{
+app.post('/contact', (req, res) =>{
+  res.json({ message: "Hello from Email!" });
   const name = req.body.mailerState.name;
   const subject = req.body.mailerState.subject;
   const email = req.body.mailerState.email;
@@ -60,8 +61,8 @@ app.post('/Contact', (req, res) =>{
   })    
 });
 
-// Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../my-app/build')));
+// // Have Node serve the files for our built React app
+// app.use(express.static(path.resolve(__dirname, '../my-app/build')));
 
 // Handle GET requests to /api route
 app.get("/", (req, res) => {
@@ -69,10 +70,10 @@ app.get("/", (req, res) => {
 });
 
 
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../my-app/build', 'index.html'));
-});
+// // All other GET requests not handled before will return our React app
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '../my-app/build', 'index.html'));
+// });
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
