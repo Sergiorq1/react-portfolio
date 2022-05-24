@@ -52,8 +52,7 @@ app.post('/contact', (req, res) =>{
   }
   connectEmail.sendMail(mail, (error) => {
       if (error) {
-          res.json({ status: "ERROR"});
-          res.json({error})
+          res.json({error});
           console.log('Failed to send :(')
       } else {
           console.log('sent successfully')
