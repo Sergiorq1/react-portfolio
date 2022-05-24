@@ -19,6 +19,7 @@ const connectEmail = nodemailer.createTransport({
   port: PORT,
   secure: true,
   auth: {
+    type: 'custom',
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASSWORD,
     clientId: process.env.OAUTH_CLIENTID,
