@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 require('dotenv').config();
-const PORT = process.env.PORT || 3080;
+const PORT = process.env.PORT || 443;
 const app = express();
 
 //middleware
