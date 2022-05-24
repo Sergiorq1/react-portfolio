@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "npm install",
-    "dev": "nodemon ./server.js localhost 3080"
+    "dev": "npm run build && npm start"
   },
   "dependencies": {
     "cors": "^2.8.5",
