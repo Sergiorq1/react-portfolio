@@ -61,7 +61,7 @@ app.post('/contact', (req, res) =>{
 });
 
 // // Have Node serve the files for our built React app
-// app.use(express.static(path.resolve(__dirname, '../my-app/build')));
+app.use(express.static(path.resolve(__dirname, '../my-app/build')));
 
 // Handle GET requests to /api route
 app.get("/", (req, res) => {
@@ -70,9 +70,10 @@ app.get("/", (req, res) => {
 
 
 // // All other GET requests not handled before will return our React app
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '../my-app/build', 'index.html'));
-// });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../my-app/build', 'index.html'));
+});
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
