@@ -7,6 +7,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 587;
 const HOST = process.env.HOST || 'smtp.gmail.com';
 const TYPE = process.env.TYPE || 'OAuth2';
+const SECURE = process.env.SECURE || false;
 const app = express();
 
 //middleware
@@ -21,7 +22,7 @@ const connectEmail = nodemailer.createTransport({
   host: HOST,
   service: 'gmail',
   port: PORT,
-  secure: true,
+  secure: SECURE,
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASSWORD,
