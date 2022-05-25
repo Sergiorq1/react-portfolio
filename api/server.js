@@ -6,6 +6,7 @@ const nodemailer = require("nodemailer");
 require('dotenv').config();
 const PORT = process.env.PORT || 587;
 const HOST = process.env.HOST || 'smtp.gmail.com';
+const TYPE = process.env.TYPE || 'OAuth2';
 const app = express();
 
 //middleware
@@ -16,6 +17,7 @@ app.use(express.json());
 
 // makes connection to nodemailer from personal email
 const connectEmail = nodemailer.createTransport({
+  type: TYPE,
   host: HOST,
   service: 'gmail',
   port: PORT,
