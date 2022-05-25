@@ -4,10 +4,8 @@ const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 require('dotenv').config();
-const PORT = process.env.PORT || 587;
-const HOST = process.env.HOST || 'smtp.gmail.com';
-const TYPE = process.env.TYPE || 'OAuth2';
-const SECURE = process.env.SECURE || false;
+const PORT = process.env.PORT || 465;
+const HOST = process.env.HOST || 'smtp.zoho.com';
 const app = express();
 
 //middleware
@@ -18,17 +16,13 @@ app.use(express.json());
 
 // makes connection to nodemailer from personal email
 const connectEmail = nodemailer.createTransport({
-  type: TYPE,
+  pool: true,
   host: HOST,
-  service: 'gmail',
   port: PORT,
-  secure: SECURE,
+  secure: true,
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASSWORD,
-    clientId: process.env.OAUTH_CLIENTID,
-    clientSecret: process.env.OAUTH_CLIENT_SECRET,
-    refreshToken: process.env.OAUTH_REFRESH_TOKEN
   },
 });
 
