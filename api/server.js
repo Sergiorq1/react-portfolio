@@ -16,7 +16,7 @@ app.use(express.json());
 
 // makes connection to nodemailer from personal email
 const connectEmail = nodemailer.createTransport({
-  pool: true,
+  type: "OAuth2",
   host: HOST,
   port: PORT,
   secure: true,
