@@ -18,7 +18,7 @@ app.use(express.json());
 const connectEmail = nodemailer.createTransport({
   host: HOST,
   port: PORT,
-  secure: true,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
