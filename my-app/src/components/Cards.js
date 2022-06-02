@@ -1,6 +1,7 @@
 import React from 'react';
 import CardItem from './CardItem';
 import './Cards.css';
+import img from '../space-galaxy-background.jpg'
 function Cards() {
   return (
     <div className='cards' id='projects'>
@@ -36,7 +37,7 @@ function Cards() {
                         to='/services'
                         />
                         <CardItem
-                        src='space-galaxy-background.jpg'
+                        src={img}
                         text='Pygame Space Invaders'
                         label="Python"
                         to='//replit.com/@SergioRodrigu13/Spaceship-of-DOOOOM?v=1'
