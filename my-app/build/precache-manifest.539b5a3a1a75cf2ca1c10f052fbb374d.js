@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "84be5885047fd35513e9",
+    "revision": "29a9ac22ba997c7c4e3c",
     "url": "/react-portfolio/static/css/main.57b3e77a.chunk.css"
   },
   {
-    "revision": "84be5885047fd35513e9",
-    "url": "/react-portfolio/static/js/main.84be5885.chunk.js"
+    "revision": "29a9ac22ba997c7c4e3c",
+    "url": "/react-portfolio/static/js/main.29a9ac22.chunk.js"
   },
   {
     "revision": "c48567911be780aa4e4a",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/react-portfolio/static/media/carphoto.9b81f843.png"
   },
   {
-    "revision": "8b0f9b20f69598410844150f771b6d06",
+    "revision": "05bee06632b9493043bae542eada3cc2",
     "url": "/react-portfolio/index.html"
   }
 ];
