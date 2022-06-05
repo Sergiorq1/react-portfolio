@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://sergiorq1.github.io",
+  "homepage": "https://sergiorq1.github.io/react-portfolio",
   "private": true,
   "proxy": "http://localhost:6000",
   "dependencies": {

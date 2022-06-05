@@ -1,28 +1,26 @@
 import React from 'react';
 import Navbar from './components/Navbar'
 import { 
-  BrowserRouter, 
   Routes, 
-  Route} from 'react-router-dom';
+  Route,
+  Link,
+  BrowserRouter} from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
 import Background from './components/pages/Background';
 import Footer from './components/Footer';
+
 function App() {
 
   return (
-    <>
-      <BrowserRouter>
+    <div className="app">
         <Navbar/>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/react-portfolio' element={<Home/>}/>
           <Route path='/background' element={<Background/>}/>
         </Routes>
         <Footer/>
-      </BrowserRouter>
-  
-    </>
+    </div>
   );
 }
-
 export default App;
