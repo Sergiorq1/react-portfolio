@@ -16,26 +16,26 @@ function Footer() {
             </div>
         </div>
         <div className="social-icons">
-            <Link 
+            <a 
                 class='social-icon'
-                to='//github.com/Sergiorq1'
+                href='https://github.com/Sergiorq1/'
             >
                 <i class="fab fa-github"></i>
-            </Link>
+            </a>
 
-            <Link 
+            <a
                 class='social-icon'
-                to='//linkedin.com/in/sergio-rodriguez-quiroz-ba31621b3/'
+                href='https://www.linkedin.com/in/sergio-rodriguez-quiroz-ba31621b3/'
             >
                 <i class="fab fa-linkedin"></i>
-            </Link>
+            </a>
             
-            <Link 
+            <a 
                 class='social-icon'
-                to='//sergio-rodriguez-63720.medium.com/'   
+                href='https://sergio-rodriguez-63720.medium.com/'   
             >
                 <i class="fab fa-medium"></i>
-            </Link>
+            </a>
         </div>
         <p>This is a react project</p>
     </div>

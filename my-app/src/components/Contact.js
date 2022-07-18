@@ -8,7 +8,7 @@ function Contact(props) {
   return (
     <div className="contact" id='contact'>
         <div className="contact-box">
-            <h1>Contact Me through email at <Link to="mailto:sergiorq12016@gmail.com">sergiorq12016@gmail.com</Link></h1>
+            <h1>Contact Me through email at <a>sergiorq12016@gmail.com</a></h1>
         </div>
     </div>
   )

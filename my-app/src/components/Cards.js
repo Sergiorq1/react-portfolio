@@ -14,33 +14,38 @@ function Cards() {
                         src='https://api.lorem.space/image/shoes?'
                         text='Basketball Twitter Bot'
                         label="Scraper, Sql"
-                        to='/services'
+                        to={{ pathname:'https://github.com/Sergiorq1/twitter-stat-bot'}}
+                        target="_blank"
                         />
                         <CardItem
                         src='https://api.lorem.space/image/watch?'
                         text='Blog Website'
                         label="Node, React, AWS"
-                        to='https://github.com/Sergiorq1/blog-mae'
+                        to={{ pathname:'https://github.com/Sergiorq1/blog-mae'}}
+                        target="_blank"
                         />
                     </ul>
                     <ul className="cards-items">
                         <CardItem
-                            src='https://api.lorem.space/image?'
-                            text='NFT Puzzle Game'
-                            label="Blockchain, React"
-                            to='/services'
+                        src='https://api.lorem.space/image?'
+                        text='NFT Puzzle Game'
+                        label="Blockchain, React"
+                        to={{ pathname:'https://github.com/Sergiorq1/blockchain-game-arcade'}}
+                        target="_blank"
                         />
                         <CardItem
                         src='https://api.lorem.space/image/car?'
                         text='Fun facts'
                         label="API"
-                        to='/services'
+                        to={{ pathname:'https://github.com/Sergiorq1/blockchain-game-arcade'}}
+                        target="_blank"
                         />
                         <CardItem
                         src={img}
                         text='Pygame Space Invaders'
                         label="Python"
-                        to='//replit.com/@SergioRodrigu13/Spaceship-of-DOOOOM?v=1'
+                        to={{ pathname:'https://replit.com/@SergioRodrigu13/Spaceship-of-DOOOOM?v=1'}}
+                        target="_blank"
                         /> 
                     </ul>
                 </div>
