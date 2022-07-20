@@ -25,7 +25,7 @@ function Navbar() {
   window.addEventListener('resize', showButton);
   return (
   <>
-    <nav className='navbar' id='/#'>
+    <nav className='navbar' id='/'>
         <div className="navbar-container">
             <Link to='/#' className='navbar-logo' onClick={closeMobileMenu}>
                 <i class="fas fa-record-vinyl"></i>

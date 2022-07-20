@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import "../App.css"
 import './About.css'
 function About() {
@@ -9,7 +10,7 @@ function About() {
             A Developer.
         </h1>
         <p>In a nutshell, I'm a creative person who loves learning and working with technologies regarding API's, blockchain, and music 
-        <a href="/background">Learn more</a>
+        <Link to="/background">Learn more</Link>
         </p>
     </div>
   )
