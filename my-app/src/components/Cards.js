@@ -38,17 +38,18 @@ function Cards() {
                         />
                         <CardItem
                         src='https://api.lorem.space/image/car?'
-                        text='Fun facts'
-                        label="API"
+                        text='Super Mario p5.js'
+                        label="Javascript"
                         to='/'
+                        value="​https://productive-airy-bowler.glitch.me"
                         target="_blank"
                         />
                         <CardItem
                         src={img}
-                        text='Pygame Space Invaders'
-                        label="Python"
+                        text='Weather Analyzer'
+                        label="Python, Flask"
                         to='/'
-                        value="https://replit.com/@SergioRodrigu13/Spaceship-of-DOOOOM?v=1"
+                        value="https://github.com/Sergiorq1/WEB-1.1-Weather-API"
                         target="_blank"
                         /> 
                     </ul>
